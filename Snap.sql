@@ -2,17 +2,16 @@
 ALTER DATABASE cryan17 CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 
 -- This will drop any currently existing tables
-DROP TABLE IF EXISTS comments;
+DROP TABLE IF EXISTS comment;
 
--- Creates comments table
-CREATE TABLE comments (
+-- Creates comment table
+CREATE TABLE comment (
 	-- this creates the attribute for the primary key
 	-- not null means required
-	commentsId BINARY(16) NOT NULL ,
-	commentsText VARCHAR(255)NOT NULL ,
-	commentsDateTime TIMESTAMP,
-	UNIQUE (commentsId),
+	commentId BINARY(16) NOT NULL ,
+	commentDateTime TIMESTAMP(6),
+	commentText VARCHAR(128)NOT NULL ,
 	-- This officiates the primary key
-	PRIMARY KEY (commentsId)
+	PRIMARY KEY (commentId)
 );
 
